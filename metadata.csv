@@ -1,0 +1,59 @@
+Declare,metatab-latest
+Title,Child and Adult Care Food Program (CACFP) Sites
+Description,The Child and Adult Care Food Program (CACFP) provides federal funding to
+Description,"participating child care and adult day care centers, allowing the centers to"
+Description,serve nutritious meals to enrolled participants
+Identifier,8e4b7a37-6745-459a-8a47-94ebab7f7382
+Name,cde.ca.gov-cacfp_sites-2
+Dataset,cacfp_sites
+Origin,cde.ca.gov
+Version,2
+Created,2019-06-14T15:19:04
+Modified,2019-06-18T04:32:45
+Giturl,https://github.com/metatab-packages/cde.ca.gov.git
+""
+Section,Contacts,Email,Organization,Url
+Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com
+""
+Section,Documentation,Title,Description,
+Documentation,file:README.md,README,,
+Homepage,https://www.cde.ca.gov/ls/nu/cc/index.asp,Program home page,,
+Downloadpage,https://www.cde.ca.gov/ds/sh/sn/cacfpcentermap.asp,Download page,,
+""
+Section,References,Name,Description,
+Reference,data/geocodes.csv,site_geocodes,Externally geocoded site locations. Geocoded with Geocodio.io,
+Reference,https://www.cde.ca.gov/ds/sh/sn/documents/apcacfpcentersites2019.xlsx#&headers=4&start=5,cacfp_sites_source,List of  Child and Adult Care Food Program (CACFP) sites,
+Reference,metapack+http://library.metatab.org/cde.ca.gov-schools-1.csv#public_schools,schools,California schools and districts,
+Reference,metapack+http://library.metatab.org/sandiegodata.org-county_codes-ca-1.csv#ca_county_codes,ca_county_codes,"California government codes for counties, used in  CDS codes",
+""
+Section,Resources,Name,Description,
+Datafile,notebooks/ProcessCACFP.ipynb#cacfp,cacfp_sites,"CACFP sites, with location geocode and program type dummy variables",
+""
+Section,Schema,DataType,Description,
+Table,cacfp_sites,,,
+Table.Column,name,text,,
+Table.Column,county,string,,
+Table.Column,address,text,,
+Table.Column,city,text,,
+Table.Column,state,string,,
+Table.Column,zip,string,,
+Table.Column,geoid,string,Geoid of the Census tract that contains the site,
+Table.Column,lat,number,Latitude of the site,
+Table.Column,lon,number,Longitude of the site,
+Table.Column,sponsor_name,string,,
+Table.Column,contact,text,Site contact person name,
+Table.Column,phone_number,string,Phone number for site or site contact person.,
+Table.Column,program_type,string,Comma separated collection of site type strings.,
+Table.Column,adc,integer,"1 if the program_type includes 'ADULT DAY CARE (ADC)', 0 otherwise",
+Table.Column,adh,integer,"1 if the program_type includes 'ADULT DAY HEALTH (ADH)', 0 otherwise",
+Table.Column,atr,integer,"1 if the program_type includes 'AT RISK SITE (ATR)', 0 otherwise",
+Table.Column,hom,integer,"1 if the program_type includes 'EMERGENCY SHELTER (HOM)', 0 otherwise",
+Table.Column,hsc,integer,"1 if the program_type includes 'HEAD START CENTER (HSC)', 0 otherwise",
+Table.Column,itc,integer,"1 if the program_type includes 'INFANT/TODDLER (ITC)', 0 otherwise",
+Table.Column,other,integer,"1 if the program_type includes 'OTHER', 0 otherwise",
+Table.Column,ccc,integer,"1 if the program_type includes 'PRESCHOOL AGE CENTER (CCC)', 0 otherwise",
+Table.Column,sac,integer,"1 if the program_type includes 'SCHOOL AGE CENTER (SAC)', 0 otherwise",
+Table.Column,sps,integer,"1 if the program_type includes 'STATE PRE SCHOOL CENTER (SPS)', 0 otherwise",
+Table.Column,cdscode,string,Matched CDS code,
+Table.Column,match_type,string,"Way the CDS code way matched: fhs, name_city, name_county, fhs_nz, mp_name",
+Table.Column,match_qc,float,The inverse of the number of records that matched. Higher values are more definite matches,
