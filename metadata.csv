@@ -1,34 +1,37 @@
 Declare,metatab-latest
-Title,Child and Adult Care Food Program (CACFP) Sites
+Title,"Child and Adult Care Food Program (CACFP) Sites, 2020"
 Description,The Child and Adult Care Food Program (CACFP) provides federal funding to
 Description,"participating child care and adult day care centers, allowing the centers to"
 Description,serve nutritious meals to enrolled participants
 Identifier,8e4b7a37-6745-459a-8a47-94ebab7f7382
-Name,cde.ca.gov-cacfp_sites-2
+Name,cde.ca.gov-cacfp_sites-1.2.1
 Dataset,cacfp_sites
 Origin,cde.ca.gov
-Version,2
+Version,1.2.1
+Version.Major,1
+Version.Minor,2
+Version.Patch,1
 Created,2019-06-14T15:19:04
-Modified,2019-06-18T04:32:45
+Modified,2021-02-25T00:47:07
 Giturl,https://github.com/metatab-packages/cde.ca.gov.git
-""
+
 Section,Contacts,Email,Organization,Url
 Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com
-""
+
 Section,Documentation,Title,Description,
 Documentation,file:README.md,README,,
 Homepage,https://www.cde.ca.gov/ls/nu/cc/index.asp,Program home page,,
 Downloadpage,https://www.cde.ca.gov/ds/sh/sn/cacfpcentermap.asp,Download page,,
-""
+
 Section,References,Name,Description,
 Reference,data/geocodes.csv,site_geocodes,Externally geocoded site locations. Geocoded with Geocodio.io,
-Reference,https://www.cde.ca.gov/ds/sh/sn/documents/apcacfpcentersites2019.xlsx#&headers=4&start=5,cacfp_sites_source,List of  Child and Adult Care Food Program (CACFP) sites,
+Reference,https://www.cde.ca.gov/ds/sh/sn/documents/apcacfpcentersites2020.xlsx#&headers=5&start=6,cacfp_sites_source,List of  Child and Adult Care Food Program (CACFP) sites,
 Reference,metapack+http://library.metatab.org/cde.ca.gov-schools-1.csv#public_schools,schools,California schools and districts,
 Reference,metapack+http://library.metatab.org/sandiegodata.org-county_codes-ca-1.csv#ca_county_codes,ca_county_codes,"California government codes for counties, used in  CDS codes",
-""
+
 Section,Resources,Name,Description,
 Datafile,notebooks/ProcessCACFP.ipynb#cacfp,cacfp_sites,"CACFP sites, with location geocode and program type dummy variables",
-""
+
 Section,Schema,DataType,Description,
 Table,cacfp_sites,,,
 Table.Column,name,text,,
